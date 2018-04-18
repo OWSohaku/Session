@@ -9,16 +9,16 @@ if (isset($_GET['add_to_cart'])) {
     // Pour ajouter un cookie
     switch ($_GET['add_to_cart']) {
         case "46":
-            isset($_SESSION['nuts']) ? $_SESSION['nuts'] += 1 : $_SESSION['nuts'] = 1; header("Location: index.php");
+            isset($_SESSION['nuts']) ? $_SESSION['nuts'] += 1 : $_SESSION['nuts'] = 1;
             break;
         case "36":
-            isset($_SESSION['chips']) ? $_SESSION['chips'] += 1 : $_SESSION['chips'] = 1; header("Location: index.php");
+            isset($_SESSION['chips']) ? $_SESSION['chips'] += 1 : $_SESSION['chips'] = 1;
             break;
         case "58":
-            isset($_SESSION['choco']) ? $_SESSION['choco'] += 1 : $_SESSION['choco'] = 1; header("Location: index.php");
+            isset($_SESSION['choco']) ? $_SESSION['choco'] += 1 : $_SESSION['choco'] = 1;
             break;
         case "32":
-            isset($_SESSION['m&ms']) ? $_SESSION['m&ms'] += 1 : $_SESSION['m&ms'] = 1; header("Location: index.php");
+            isset($_SESSION['m&ms']) ? $_SESSION['m&ms'] += 1 : $_SESSION['m&ms'] = 1;
             break;
     }
 
@@ -27,26 +27,27 @@ if (isset($_GET['add_to_cart'])) {
         switch ($_GET['add_to_cart']) {
             case "47":
                 if (isset($_SESSION['nuts']) && $_SESSION['nuts'] > 0) {
-                    $_SESSION['nuts']--; header("Location: index.php");
+                    $_SESSION['nuts']--;
                 }
                 break;
             case "37":
                 if (isset($_SESSION['chips']) && $_SESSION['chips'] > 0) {
-                    $_SESSION['chips']--; header("Location: index.php");
+                    $_SESSION['chips']--;
                 }
                 break;
             case "59":
                 if (isset($_SESSION['choco']) && $_SESSION['choco'] > 0) {
-                    $_SESSION['choco']--; header("Location: index.php");
+                    $_SESSION['choco']--;
                 }
                 break;
             case "33":
                 if (isset($_SESSION['m&ms']) && $_SESSION['m&ms'] > 0) {
-                    $_SESSION['m&ms']--; header("Location: index.php");
+                    $_SESSION['m&ms']--;
                 }
                 break;
         }
     }
+    header("Location: index.php");
 }
 
 
