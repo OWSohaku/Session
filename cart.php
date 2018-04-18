@@ -2,6 +2,7 @@
 
 require 'inc/head.php';
 
+isset($_SESSION['loginname']) ? $_SESSION['loginname'] : header("Location: login.php");
 
 ?>
 <section class="cookies container-fluid">

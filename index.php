@@ -2,43 +2,23 @@
 
 require 'inc/head.php';
 
-if (isset($_SESSION['loginname'])) {
-    $_SESSION['loginname'];
-} else {
-    header("Location: login.php");
-}
+isset($_SESSION['loginname']) ? $_SESSION['loginname'] : header("Location: login.php");
 
 if (isset($_GET['add_to_cart'])) {
 
     // Pour ajouter un cookie
     switch ($_GET['add_to_cart']) {
         case "46":
-            if (isset($_SESSION['nuts'])) {
-                $_SESSION['nuts'] += 1;
-            } else {
-                $_SESSION['nuts'] = 1;
-            }
+            isset($_SESSION['nuts']) ? $_SESSION['nuts'] += 1 : $_SESSION['nuts'] = 1; header("Location: index.php");
             break;
         case "36":
-            if (isset($_SESSION['chips'])) {
-                $_SESSION['chips'] += 1;
-            } else {
-                $_SESSION['chips'] = 1;
-            }
+            isset($_SESSION['chips']) ? $_SESSION['chips'] += 1 : $_SESSION['chips'] = 1; header("Location: index.php");
             break;
         case "58":
-            if (isset($_SESSION['choco'])) {
-                $_SESSION['choco'] += 1;
-            } else {
-                $_SESSION['choco'] = 1;
-            }
+            isset($_SESSION['choco']) ? $_SESSION['choco'] += 1 : $_SESSION['choco'] = 1; header("Location: index.php");
             break;
         case "32":
-            if (isset($_SESSION['m&ms'])) {
-                $_SESSION['m&ms'] += 1;
-            } else {
-                $_SESSION['m&ms'] = 1;
-            }
+            isset($_SESSION['m&ms']) ? $_SESSION['m&ms'] += 1 : $_SESSION['m&ms'] = 1; header("Location: index.php");
             break;
     }
 
@@ -46,23 +26,23 @@ if (isset($_GET['add_to_cart'])) {
     if (isset($_GET['add_to_cart'])) {
         switch ($_GET['add_to_cart']) {
             case "47":
-                if ($_SESSION['nuts'] > 0) {
-                    $_SESSION['nuts']--;
+                if (isset($_SESSION['nuts']) && $_SESSION['nuts'] > 0) {
+                    $_SESSION['nuts']--; header("Location: index.php");
                 }
                 break;
             case "37":
-                if ($_SESSION['chips'] > 0) {
-                    $_SESSION['chips']--;
+                if (isset($_SESSION['chips']) && $_SESSION['chips'] > 0) {
+                    $_SESSION['chips']--; header("Location: index.php");
                 }
                 break;
             case "59":
-                if ($_SESSION['choco'] > 0) {
-                    $_SESSION['choco']--;
+                if (isset($_SESSION['choco']) && $_SESSION['choco'] > 0) {
+                    $_SESSION['choco']--; header("Location: index.php");
                 }
                 break;
             case "33":
-                if ($_SESSION['m&ms'] > 0) {
-                    $_SESSION['m&ms']--;
+                if (isset($_SESSION['m&ms']) && $_SESSION['m&ms'] > 0) {
+                    $_SESSION['m&ms']--; header("Location: index.php");
                 }
                 break;
         }
